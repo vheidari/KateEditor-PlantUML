@@ -46,6 +46,7 @@
 			<!--  Normal Text context -->
 			<context attribute="NormalText" lineEndContext="#pop" name="NormalText" >
 				<DetectSpaces/>
+                <StringDetect attribute="Comment" context="Comment" String="/\'" beginRegion="comment"/>
 				<keyword attribute="Keyword" context="#stay" String="Keywords" />
     			<keyword attribute="OpenCloseToken" context="#stay" String="OpenCloseTokens" />
                 <RegExpr attribute="Symbol" context="assign" String="(.\|--)" firstNonSpace="false"/>
@@ -57,9 +58,7 @@
                 <RegExpr attribute="Symbol" context="assign" String="(--.)" firstNonSpace="false"/>
                 <RegExpr attribute="Symbol" context="assign" String="(\.\..)" firstNonSpace="false"/>
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+" firstNonSpace="false"/>
-                <RegExpr attribute="Operator" context="assign" String="#" firstNonSpace="false"/>
-                <RegExpr attribute="Operator" context="assign" String="+" firstNonSpace="false"/>
-                <RegExpr attribute="Operator" context="assign" String="-" firstNonSpace="false"/>
+                <AnyChar attribute="Operator" context="#stay" String="#,+,-,:"/>
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false"/>
                 <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(\)" firstNonSpace="false"/>
                 <DetectChar attribute="String" context="DoubleQuoteString" char="&quot;"/>				
