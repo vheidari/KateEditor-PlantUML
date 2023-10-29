@@ -2,7 +2,7 @@
 <language name="PlantUml" version="1" kateversion="2.4" section="Sources" extensions="*.pu;*.uml;*.puml;*.iuml;*.plantuml" author="Vahid Heidari (vahid-heidari@hotmail.com)" license="MIT">
     <highlighting>
         <!-- OpenCloseToken Keywords -->
-        <list name="OpenCloseTokens">
+        <list name="OpenCloseKeywords">
             <item>@startuml</item>
             <item>@enduml</item>
         </list>
@@ -37,9 +37,10 @@
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
                 <DetectSpaces />
-                <StringDetect attribute="Comment" context="Comment" String="/\'" beginRegion="comment" />
+                <!--  Star Handeling Multiple line comment handeling -->
+                <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
                 <keyword attribute="Keyword" context="#stay" String="Keywords" />
-                <keyword attribute="OpenCloseToken" context="#stay" String="OpenCloseTokens" />
+                <keyword attribute="OpenCloseKeyword" context="#stay" String="OpenCloseKeywords" />
                 <RegExpr attribute="Symbol" context="assign" String="(.\|--)" firstNonSpace="false" />
                 <RegExpr attribute="Symbol" context="assign" String="(.\|\.\.)" firstNonSpace="false" />
                 <RegExpr attribute="Symbol" context="assign" String="(.\|--\*)" firstNonSpace="false" />
@@ -49,26 +50,36 @@
                 <RegExpr attribute="Symbol" context="assign" String="(--.)" firstNonSpace="false" />
                 <RegExpr attribute="Symbol" context="assign" String="(\.\..)" firstNonSpace="false" />
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+" firstNonSpace="false" />
-                <AnyChar attribute="Operator" context="#stay" String="#,+,-,:" />
+                <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,{,}" />
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
                 <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(.*\)" firstNonSpace="false" />
-                <DetectChar attribute="String" context="DoubleQuoteString" char='"' />
-                <DetectChar attribute="String" context="string" char='"' />
+                <StringDetect attribute="String" context="string" String="/\'" beginRegion="comment" />
+                <!--  Start Handeling Multiple line string  -->               
+                <DetectChar attribute="String" context="string" char="&quot;" />
             </context>
-            <!--  Strings context -->
+            
+            <!--  End Handeling Multiple line string  -->
             <context attribute="String" lineEndContext="#stay" name="string">
-                <DetectChar attribute="String" context="#pop" char='"' />
+                <DetectChar attribute="String" context="#pop" char="&quot;" />
             </context>
+            
+            <!-- End Handeling Multiple line comment handeling  -->
+            <context name="Comment" attribute="Comment" lineEndContext="#stay">
+                <DetectSpaces/>
+                <StringDetect attribute="Comment" context="#pop" String="'/" endRegion="comment"/>
+            </context>
+
         </contexts>
         <!--  End Contexts -->
 
         <itemDatas>
             <itemData name="NormalText" defStyleNum="dsNormal" />
             <itemData name="Keyword" defStyleNum="dsKeyword" />
-            <itemData name="OpenCloseToken" defStyleNum="dsBuiltIn" />
+            <itemData name="OpenCloseKeyword" defStyleNum="dsBuiltIn" />
             <itemData name="String" defStyleNum="dsString" />
             <itemData name="Symbol" defStyleNum="dsSpecialChar" />
             <itemData name="Comment" defStyleNum="dsComment" />
+            <itemData name="MultipleComment" defStyleNum="dsComment" />
             <itemData name="Lable" defStyleNum="dsComment" />
             <itemData name="Operator" defStyleNum="dsOperator" />
             <itemData name="Function" defStyleNum="dsFunction" />
