@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language 
+    name="PlantUml" 
+    version="1" 
+    kateversion="2.4" 
+    section="Sources" 
+    extensions="*.pu;*.uml;*.puml;*.iuml;*.plantuml" 
+    author="Vahid Heidari (vahid-heidari@hotmail.com)"
+    license="MIT">
+	<highlighting>
+		
+        <!-- OpenCloseToken Keywords -->
+        <list name="OpenCloseTokens">
+            <item>@startuml</item>
+            <item>@enduml</item>        
+        </list>
+        
+
+        <!-- Define List of keywords  -->
+		<list name="Keywords">
+			<item>abstract</item>
+			<item>interface</item>
+			<item>class</item>
+			<item>struct</item>
+			<item>extend</item>
+			<item>implement</item>
+            <item>annotation</item>
+            <item>circle</item>
+            <item>diamond</item>
+            <item>entity</item>
+            <item>enum</item>
+            <item>exception</item>
+            <item>metaclass</item>
+            <item>protocol</item>
+            <item>stereotype</item>
+		</list>
+
+        <!-- Include from another language  -->
+		<list name="othername">
+			<item>str</item>
+			<include>types##ISO C++</include>
+		</list>
+		
+        <!-- Start Contexts    -->
+		<contexts>
+			<!--  Normal Text context -->
+			<context attribute="NormalText" lineEndContext="#pop" name="NormalText" >
+				<DetectSpaces/>
+				<keyword attribute="Keyword" context="#stay" String="Keywords" />
+    			<keyword attribute="OpenCloseToken" context="#stay" String="OpenCloseTokens" />
+                <RegExpr attribute="Symbol" context="assign" String="(.\|--)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(.\|\.\.)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(.\|--\*)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(.--)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(--\|.)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(\.\.\|&gt;)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(--.)" firstNonSpace="false"/>
+                <RegExpr attribute="Symbol" context="assign" String="(\.\..)" firstNonSpace="false"/>
+                <RegExpr attribute="Lable" context="assign" String=": (.)\w+" firstNonSpace="false"/>
+                <RegExpr attribute="Operator" context="assign" String="#" firstNonSpace="false"/>
+                <RegExpr attribute="Operator" context="assign" String="+" firstNonSpace="false"/>
+                <RegExpr attribute="Operator" context="assign" String="-" firstNonSpace="false"/>
+                <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false"/>
+                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(\)" firstNonSpace="false"/>
+                <DetectChar attribute="String" context="DoubleQuoteString" char="&quot;"/>				
+                <DetectChar attribute="String" context="string" char="&quot;" />
+			</context>
+			<!--  Strings context -->
+			<context attribute="String" lineEndContext="#stay" name="string" >
+				<DetectChar attribute="String" context="#pop" char="&quot;" />
+			</context>
+		</contexts>
+        <!--  End Contexts -->
+        
+		<itemDatas>
+			<itemData name="NormalText" defStyleNum="dsNormal" />
+			<itemData name="Keyword" defStyleNum="dsKeyword" />
+            <itemData name="OpenCloseToken" defStyleNum="dsBuiltIn"/>
+			<itemData name="String" defStyleNum="dsString" />
+			<itemData name="Symbol" defStyleNum="dsSpecialChar" />
+            <itemData name="Comment" defStyleNum="dsComment"/>
+            <itemData name="Lable" defStyleNum="dsComment"/>
+			<itemData name="Operator" defStyleNum="dsOperator" />
+			<itemData name="Function" defStyleNum="dsFunction" />
+		</itemDatas>
+	</highlighting>
+
+    <!-- Start General -->
+	<general>
+		<!--   Comments  -->
+		<comments>
+			<comment name="singleLine" start="'"/>
+			<comment name="multiLine" start="/'" end="'/" region="CommentFolding"/>
+		</comments>
+		<keywords casesensitive="1"/>
+		<folding indentationsensitive="0"/>
+		<emptyLines>
+			<emptyLine regexpr="\s+"/>
+			<emptyLine regexpr="\s*#.*"/>
+		</emptyLines>
+		<spellchecking>
+			<encoding char="á" string="\'a"/>
+			<encoding char="à" string="\`a"/>
+		</spellchecking>
+	</general>
+    <!-- End General-->
+
+</language>
