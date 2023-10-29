@@ -60,7 +60,7 @@
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+" firstNonSpace="false"/>
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:"/>
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false"/>
-                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(\)" firstNonSpace="false"/>
+                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(.*\)" firstNonSpace="false"/>
                 <DetectChar attribute="String" context="DoubleQuoteString" char="&quot;"/>				
                 <DetectChar attribute="String" context="string" char="&quot;" />
 			</context>
