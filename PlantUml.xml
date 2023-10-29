@@ -53,6 +53,7 @@
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,{,}" />
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
                 <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(.*\)" firstNonSpace="false" />
+                <RegExpr attribute="ClassName" context="assign" String="[A-Z]\w+" firstNonSpace="false" />
                 <StringDetect attribute="String" context="string" String="/\'" beginRegion="comment" />
                 <!--  Start Handeling Multiple line string  -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
@@ -80,9 +81,10 @@
             <itemData name="Symbol" defStyleNum="dsSpecialChar" />
             <itemData name="Comment" defStyleNum="dsComment" />
             <itemData name="MultipleComment" defStyleNum="dsComment" />
-            <itemData name="Lable" defStyleNum="dsComment" />
+            <itemData name="Lable" defStyleNum="dsRegionMarker" />
             <itemData name="Operator" defStyleNum="dsOperator" />
             <itemData name="Function" defStyleNum="dsFunction" />
+            <itemData name="ClassName" defStyleNum="dsDataType" />
         </itemDatas>
     </highlighting>
 
