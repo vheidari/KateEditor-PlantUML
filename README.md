@@ -24,4 +24,5 @@ Please add `PlantUML.xml` file to the path below :
 %USERPROFILE%/AppData/Local/org.kde.syntax-highlighting/syntax
 ```
 >Note : if directory `syntax` isn't exist, you must create one in this path : `%USERPROFILE%/AppData/Local/org.kde.syntax-highlighting/`
+
 >Note : `%USERPROFILE%/` in Windows is a short path for `C://User/[yourusername]`
