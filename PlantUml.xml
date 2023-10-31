@@ -52,18 +52,16 @@
         
         <list name="Types">
             <item>Int</item>
+            <item>Float</item>
+            <item>Double</item>
             <item>String</item>
             <item>Void</item>
             <item>int</item>
+            <item>float</item>
+            <item>Double</item>
             <item>string</item>
             <item>void</item>
             <item>override</item>
-        </list>
-
-        <!-- Include from another language  -->
-        <list name="othername">
-            <item>str</item>
-            <include>types##ISO C++</include>
         </list>
 
         <!-- Start Contexts    -->
@@ -71,8 +69,6 @@
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
                 <DetectSpaces />
-                <!--  Star Handeling Multiple line comment handeling -->
-                <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
                 <keyword attribute="OpenCloseKeyword" context="#stay" String="OpenCloseKeywords" />
                 
                 <keyword attribute="Type" context="#stay" String="Types" />
@@ -103,9 +99,9 @@
                 <!-- Start Handeling Single Line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
                
-                <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
-                <StringDetect attribute="String" context="string" String="/\'" beginRegion="comment" />
-               
+                <!--  Star Handeling Multiple line comment handeling -->
+                <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
+                
                 <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
@@ -130,8 +126,8 @@
 
         <itemDatas>
             <itemData name="NormalText" defStyleNum="dsNormal" />
-            <itemData name="Keyword" defStyleNum="dsKeyword" />
             <itemData name="OpenCloseKeyword" defStyleNum="dsBuiltIn" />
+            <itemData name="Keyword" defStyleNum="dsKeyword" />
             <itemData name="String" defStyleNum="dsString" />
             <itemData name="Symbol" defStyleNum="dsSpecialChar" />
             <itemData name="Comment" defStyleNum="dsComment" />

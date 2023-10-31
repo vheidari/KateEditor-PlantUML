@@ -36,7 +36,6 @@ as
 @enduml
 
 
-
 @startuml
 Class01 <|-- Class02
 Class03 *-- Class04
@@ -73,9 +72,6 @@ Class03 o-- Class04 : aggregation
 Class05 --> "1" Class06
 
 @enduml
-
-
-
 
 
 @startuml
@@ -140,8 +136,6 @@ class Dummy {
 }
 
 @enduml
-
-
 
 
 @startuml
@@ -230,11 +224,6 @@ class User {
 @enduml
 
 
-
-
-
-
-
 @startuml
 class Object << general >> 
 Object <|--- ArrayList
@@ -250,8 +239,6 @@ class Foo
 note left : On last defined class
 
 @enduml
-
-
 
 
 @startuml
