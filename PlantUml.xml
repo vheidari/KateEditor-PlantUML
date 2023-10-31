@@ -87,7 +87,7 @@
                 <RegExpr attribute="Keyword" context="assign" String="\&lt;&gt;" firstNonSpace="false" />
 
                 <!-- Start Handeling Symbols -->
-                <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|\s]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
+                <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
                 <!-- Start Handeling Lables -->
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+.*" firstNonSpace="false" />
@@ -106,9 +106,12 @@
                 <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
                 <StringDetect attribute="String" context="string" String="/\'" beginRegion="comment" />
                
-                <!--  Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
+                <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
+                <!-- Start Handeling Note -->
+                <RegExpr attribute="Note" context="assign" String="(note\stop\sof)|(note\sright\sof)|(note\sbottom\sof)|(note\sleft\sof)|(note\sleft)|(^note)|(end\snote)" firstNonSpace="false" />
+
             </context>
             
             <!--  End Handeling Multiple line string  -->
@@ -137,6 +140,7 @@
             <itemData name="Operator" defStyleNum="dsOperator" />
             <itemData name="Function" defStyleNum="dsFunction" />
             <itemData name="Type" defStyleNum="dsDataType" />
+            <itemData name="Note" defStyleNum="dsInformation" />
         </itemDatas>
     </highlighting>
 

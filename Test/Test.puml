@@ -1,3 +1,15 @@
+/'
+ View -> Code Folding > Toggle Current Node
+ 
+ This is a Multiple commant line:
+ line one
+ line two
+ line three
+ line four
+ line five
+'/
+
+
 @startuml
 abstract        abstract
 abstract class  "abstract class"
@@ -224,7 +236,7 @@ class User {
 
 
 @startuml
-class Object << general >>
+class Object << general >> 
 Object <|--- ArrayList
 
 note top of Object : In java, every class\nextends this one.
@@ -235,7 +247,7 @@ Object .. N2
 N2 .. ArrayList
 
 class Foo
-note left: On last defined class
+note left : On last defined class
 
 @enduml
 
@@ -245,7 +257,7 @@ note left: On last defined class
 @startuml
 
 class Foo
-note left: On last defined class
+note left : On last defined class
 
 note top of Foo
   In java, <size:18>every</size> <u>class</u>
