@@ -4,7 +4,9 @@
         <!-- OpenCloseToken Keywords -->
         <list name="OpenCloseKeywords">
             <item>@startuml</item>
+            <item>@startmindmap</item>
             <item>@enduml</item>
+            <item>@endmindmap</item>
         </list>
 
         <!-- Define List of keywords  -->
@@ -13,6 +15,7 @@
             <item>interface</item>
             <item>class</item>
             <item>struct</item>
+            <item>object</item>
             <item>extend</item>
             <item>implement</item>
             <item>annotation</item>
@@ -26,8 +29,6 @@
             <item>skinparam</item>
             <item>skinparam</item>
             <item>classAttributeIconSize</item>
-            <item>static</item>
-            <item>virtual</item>
         </list>
         
         <!-- Define List of participants keyword  -->
@@ -45,11 +46,16 @@
             <item>hide</item>
         </list>
         
+        <!-- Define List of Modifires  -->
         <list name="Modifires">
-            <item>{abstract}</item>
-            <item>{static}</item>
+            <item>public</item>
+            <item>private</item>
+            <item>protected</item>
+            <item>static</item>
+            <item>virtual</item>
         </list>
         
+        <!-- Define List of Typse  -->
         <list name="Types">
             <item>Int</item>
             <item>Float</item>
@@ -58,20 +64,43 @@
             <item>Void</item>
             <item>int</item>
             <item>float</item>
-            <item>Double</item>
+            <item>double</item>
             <item>string</item>
             <item>void</item>
+        </list>
+        
+        <!-- Define list of Noations -->
+        <list name="Noations">
             <item>override</item>
         </list>
+        
+        <!-- Define List of Conditions  -->
+        <list name="Conditions">
+            <item>if</item>
+            <item>else</item>
+            <item>switch</item>
+        </list>
+        
+        
+        
 
         <!-- Start Contexts    -->
         <contexts>
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
                 <DetectSpaces />
+                 <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
+                <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
+                
+                <!--  Start Handeling OpenCloseKeywords -->
                 <keyword attribute="OpenCloseKeyword" context="#stay" String="OpenCloseKeywords" />
                 
+                <!-- Start Handeling Types -->
                 <keyword attribute="Type" context="#stay" String="Types" />
+                
+                <!-- Start Handeling Noations -->
+                <keyword attribute="Type" context="assign" String="Noations" />
+                
                 <!--  Start Handeling Keyword  --> 
                 <keyword attribute="Keyword" context="#stay" String="Keywords" />
                 <keyword attribute="Keyword" context="assign" String="Participants" />
@@ -79,11 +108,12 @@
                 
                 <!-- Keyword circle_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\(\)" firstNonSpace="false" />
+                
                 <!-- Keyword diamond_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\&lt;&gt;" firstNonSpace="false" />
 
                 <!-- Start Handeling Symbols -->
-                <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
+                <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
                 <!-- Start Handeling Lables -->
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+.*" firstNonSpace="false" />
@@ -94,14 +124,13 @@
                 <!-- Start Handeling Oprators  -->
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
 
+                <!-- Start Handeling Functions -->
                 <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)" firstNonSpace="false" />
                 
                 <!-- Start Handeling Single Line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
                
-                <!--  Star Handeling Multiple line comment handeling -->
-                <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
-                
+
                 <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
