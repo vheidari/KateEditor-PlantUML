@@ -5,7 +5,7 @@ annotation      annotation
 circle          circle
 ()              circle_short_form
 class           class
-class           class_stereo  <<stereotype>>
+class           class_stereo <<stereotype>>
 diamond         diamond
 <>              diamond_short_form
 entity          entity
@@ -124,8 +124,8 @@ class Flight {
 
 @startuml
 class Dummy {
-  {field} A field (despite parentheses)
-  {method} Some method
+  { field } A field ( despite parentheses )
+  { method} Some method
 }
 
 @enduml
@@ -180,8 +180,8 @@ class Dummy {
 
 @startuml
 class Dummy {
-  {static} String id
-  {abstract} void methods()
+  { static } String id
+  { abstract } void methods()
 }
 @enduml
 
@@ -205,14 +205,14 @@ class Foo1 {
 
 
 class User {
-  .. Simple Getter ..
+  .. Simple Getter .. 
   + getName()
   + getAddress()
-  .. Some setter ..
+  .. Some setter .. 
   + setName()
-  __ private data __
+  __ private data __ 
   int age
-  -- encrypted --
+  -- encrypted -- 
   String password
 }
 

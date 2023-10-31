@@ -48,6 +48,12 @@
             <item>{abstract}</item>
             <item>{static}</item>
         </list>
+        
+        <list name="Types">
+            <item>Int</item>
+            <item>String</item>
+            <item>Void</item>
+        </list>
 
         <!-- Include from another language  -->
         <list name="othername">
@@ -74,9 +80,7 @@
                 <!-- Keyword diamond_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\&lt;&gt;" firstNonSpace="false" />
 
-                <RegExpr attribute="Symbol" context="assign" String="[.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+ |(>>)|(&lt;&lt;)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
-
-                
+                <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|\s]+(?=\W)|(>>)|(&lt;&lt;)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
                 <!-- Start Handeling Lables -->
                 <RegExpr attribute="Lable" context="assign" String=": (.)\w+.*" firstNonSpace="false" />
@@ -95,8 +99,6 @@
                 
                 <!--  Start Handeling Multiple line string  -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
-                
-                
                 
                 
             </context>
