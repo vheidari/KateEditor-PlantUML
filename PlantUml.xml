@@ -18,12 +18,35 @@
             <item>annotation</item>
             <item>circle</item>
             <item>diamond</item>
-            <item>entity</item>
             <item>enum</item>
             <item>exception</item>
             <item>metaclass</item>
             <item>protocol</item>
             <item>stereotype</item>
+            <item>static</item>
+            <item>skinparam</item>
+            <item>skinparam</item>
+            <item>classAttributeIconSize</item>
+        </list>
+        
+        <!-- Define List of participants keyword  -->
+        <list name="Participants">
+            <item>participant</item>
+            <item>actor</item>
+            <item>boundary</item>
+            <item>control</item>
+            <item>entity</item>
+            <item>database</item>
+            <item>collections</item>
+            <item>queue</item>
+            <item>as</item>
+            <item>remove</item>
+            <item>hide</item>
+        </list>
+        
+        <list name="Modifires">
+            <item>{abstract}</item>
+            <item>{static}</item>
         </list>
 
         <!-- Include from another language  -->
@@ -39,24 +62,43 @@
                 <DetectSpaces />
                 <!--  Star Handeling Multiple line comment handeling -->
                 <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
-                <keyword attribute="Keyword" context="#stay" String="Keywords" />
                 <keyword attribute="OpenCloseKeyword" context="#stay" String="OpenCloseKeywords" />
-                <RegExpr attribute="Symbol" context="assign" String="(.\|--)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(.\|\.\.)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(.\|--\*)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(.--)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(--\|.)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(\.\.\|&gt;)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(--.)" firstNonSpace="false" />
-                <RegExpr attribute="Symbol" context="assign" String="(\.\..)" firstNonSpace="false" />
-                <RegExpr attribute="Lable" context="assign" String=": (.)\w+" firstNonSpace="false" />
-                <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,{,}" />
+                
+                <!--  Start Handeling Keyword  --> 
+                <keyword attribute="Keyword" context="#stay" String="Keywords" />
+                <keyword attribute="Keyword" context="assign" String="Participants" />
+                <keyword attribute="Keyword" context="assign" String="Modifires" />
+                
+                <!-- Keyword circle_short_form syntax -->
+                <RegExpr attribute="Keyword" context="assign" String="\(\)" firstNonSpace="false" />
+                <!-- Keyword diamond_short_form syntax -->
+                <RegExpr attribute="Keyword" context="assign" String="\&lt;&gt;" firstNonSpace="false" />
+
+                <RegExpr attribute="Symbol" context="assign" String="[.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+ |(>>)|(&lt;&lt;)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
+
+                
+                
+                <!-- Start Handeling Lables -->
+                <RegExpr attribute="Lable" context="assign" String=": (.)\w+.*" firstNonSpace="false" />
+                <RegExpr attribute="Lable" context="assign" String=": (.)\w+ [:digit:]\w+ &gt;" firstNonSpace="false" />
+                <RegExpr attribute="Lable" context="assign" String=": (.)\w+ &gt;" firstNonSpace="false" />
+                <RegExpr attribute="Lable" context="assign" String=": &lt; (.)\w+" firstNonSpace="false" />
+                
+                <!-- Start Handeling Oprators  -->
+                <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
                 <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
-                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z]\(.*\)" firstNonSpace="false" />
-                <RegExpr attribute="ClassName" context="assign" String="[A-Z]\w+" firstNonSpace="false" />
+                
+                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)" firstNonSpace="false" />
+                
                 <StringDetect attribute="String" context="string" String="/\'" beginRegion="comment" />
+               
+                
                 <!--  Start Handeling Multiple line string  -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
+                
+                
+                
+                
             </context>
             
             <!--  End Handeling Multiple line string  -->
