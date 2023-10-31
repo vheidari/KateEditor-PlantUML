@@ -5,7 +5,7 @@ annotation      annotation
 circle          circle
 ()              circle_short_form
 class           class
-class           class_stereo <<stereotype>>
+class           class_stereo <<stereotype>> 
 diamond         diamond
 <>              diamond_short_form
 entity          entity
@@ -21,8 +21,6 @@ actor
 static
 participant
 as
-
-
 @enduml
 
 
@@ -93,6 +91,7 @@ class "$C2" as dollarC2
 remove $C1
 remove $C2
 remove dollarC2
+hide $C1
 @enduml
 
 
@@ -124,7 +123,7 @@ class Flight {
 
 @startuml
 class Dummy {
-  { field } A field ( despite parentheses )
+  { field } A field ( despite parentheses ) 
   { method} Some method
 }
 
@@ -190,15 +189,15 @@ class Dummy {
 class Foo1 {
   You can use
   several lines
-  ..
+  .. 
   as you want
   and group
-  ==
+  == 
   things together.
-  __
+  __ 
   You can have as many groups
   as you want
-  --
+  -- 
   End of class
 }
 
@@ -266,8 +265,8 @@ end note
 
 @startuml
 class A {
-+void {static} int counter
-+void {abstract} start(int timeout)
++void { static } int counter
++void { abstract } start(int timeout)
 }
 note right of A::counter
   This member is annotated
