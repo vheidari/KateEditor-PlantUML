@@ -5,8 +5,10 @@
         <list name="OpenCloseKeywords">
             <item>@startuml</item>
             <item>@startmindmap</item>
+            <item>@startgantt</item>
             <item>@enduml</item>
             <item>@endmindmap</item>
+            <item>@endgantt</item>
         </list>
 
         <!-- Define List of keywords  -->
@@ -67,6 +69,21 @@
             <item>double</item>
             <item>string</item>
             <item>void</item>
+            <item>monday</item>
+            <item>tuesday</item>
+            <item>wednesday</item>
+            <item>thursday</item>
+            <item>friday</item>
+            <item>saturday</item>
+            <item>sunday</item>
+            <item>today</item>
+            <item>project</item>
+            <item>Project</item>
+            <item>labels</item>
+            <item>Labels</item>
+            <item>last</item>
+            <item>first</item>
+            <item>column</item>
         </list>
         
         <!-- Define list of Noations -->
@@ -128,7 +145,7 @@
                 <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)" firstNonSpace="false" />
                 
                 <!-- Start Handeling Single Line Comment -->
-                <RegExpr attribute="Comment" context="assign" String="\'.*" firstNonSpace="false" />
+                <RegExpr attribute="Comment" context="assign" String="^\'.*" firstNonSpace="false" />
                
 
                 <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               

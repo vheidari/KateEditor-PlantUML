@@ -1,0 +1,104 @@
+@startgantt
+Project starts the 5th of december 2018
+saturday are closed
+sunday are closed
+2018/12/29 is opened
+[Prototype design] lasts 17 days
+[Prototype design] pauses on 2018/12/13
+[Prototype design] pauses on 2018/12/14
+[Prototype design] pauses on monday
+[Test prototype] starts at [Prototype design]'s end and lasts 2 weeks
+@endgantt
+
+
+
+@startgantt
+[Prototype design] lasts 15 days
+[Test prototype] lasts 10 days
+@endgantt
+
+@startuml
+[Prototype design] lasts 15 days
+[Test prototype] lasts 10 days
+Project starts 2020-07-01
+[Prototype design] starts 2020-07-01
+[Test prototype] starts 2020-07-16
+@enduml
+
+
+@startuml
+[Prototype design] lasts 15 days
+[Test prototype] lasts 10 days
+Project starts 2020-07-01
+[Prototype design] ends 2020-07-15
+[Test prototype] ends 2020-07-25
+@enduml
+
+
+@startuml
+Project starts 2020-07-01
+[Prototype design] starts 2020-07-01
+[Test prototype] starts 2020-07-16
+[Prototype design] ends 2020-07-15
+[Test prototype] ends 2020-07-25
+@enduml
+
+
+@startuml
+Project starts 2020-07-01
+[Prototype design] starts 2020-07-01 and ends 2020-07-15
+[Test prototype] starts 2020-07-16 and lasts 10 days
+@enduml
+
+
+@startgantt
+[Prototype design] lasts 15 days
+[Test prototype] lasts 10 days
+[Test prototype] starts at [Prototype design]'s end
+@endgantt
+
+
+
+@startgantt
+[Prototype design] lasts 10 days
+[Code prototype] lasts 10 days
+[Write tests] lasts 5 days
+[Code prototype] starts at [Prototype design]'s end
+[Write tests] starts at [Code prototype]'s start
+@endgantt
+
+
+@startgantt
+[Prototype design] as [D] lasts 15 days
+[Test prototype] as [T] lasts 10 days
+[T] starts at [D]'s end
+@endgantt
+
+
+
+@startgantt
+[Prototype design] lasts 13 days
+[Test prototype] lasts 4 days
+[Test prototype] starts at [Prototype design]'s end
+[Prototype design] is colored in Fuchsia/FireBrick
+[Test prototype] is colored in GreenYellow/Green
+@endgantt
+
+
+
+@startgantt
+[foo] lasts 21 days
+[foo] is 40% completed
+[bar] lasts 30 days and is 10% complete
+@endgantt
+
+
+
+
+
+
+
+
+
+
+
