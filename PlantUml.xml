@@ -57,7 +57,7 @@
             <item>virtual</item>
         </list>
         
-        <!-- Define List of Typse  -->
+        <!-- Define List of Types  -->
         <list name="Types">
             <item>Int</item>
             <item>Float</item>
@@ -69,6 +69,52 @@
             <item>double</item>
             <item>string</item>
             <item>void</item>
+        </list>
+        
+        <!-- Define List of GanttKeywords         -->
+        <list name="GanttKeywords">
+            <item>starts</item>
+            <item>ends</item>
+            <item>start</item>
+            <item>end</item>
+            <item>closed</item>
+            <item>after</item>
+            <item>colored</item>
+            <item>lasts</item>
+            <item>happens</item>
+            <item>in</item>
+            <item>at</item>
+            <item>are</item>
+            <item>to</item>
+            <item>the</item>
+            <item>and</item>
+            <item>printscale</item>
+            <item>ganttscale</item>
+            <item>projectscale</item>
+            <item>daily</item>
+            <item>weekly</item>
+            <item>monthly</item>
+            <item>quarterly</item>
+            <item>yearly</item>
+            <item>zoom</item>
+            <item>day</item>
+            <item>days</item>
+            <item>week</item>
+            <item>weeks</item>
+            <item>today</item>
+            <item>then</item>
+            <item>complete</item>
+            <item>displays</item>
+            <item>same</item>
+            <item>row</item>
+            <item>pauses</item>
+            <item>endlegend</item>
+            <item>sprite</item>
+            <item>then</item>
+        </list>
+        
+        <!-- Define List of GanttTypes         -->
+        <list name="GanttType">
             <item>monday</item>
             <item>tuesday</item>
             <item>wednesday</item>
@@ -115,6 +161,9 @@
                 <!-- Start Handeling Types -->
                 <keyword attribute="Type" context="#stay" String="Types" />
                 
+                <!-- Start Handeling GanttTypes -->
+                <keyword attribute="Type" context="#stay" String="GanttType" />
+                
                 <!-- Start Handeling Noations -->
                 <keyword attribute="Type" context="assign" String="Noations" />
                 
@@ -122,6 +171,10 @@
                 <keyword attribute="Keyword" context="#stay" String="Keywords" />
                 <keyword attribute="Keyword" context="assign" String="Participants" />
                 <keyword attribute="Keyword" context="assign" String="Modifires" />
+                
+                <!--  Start Handeling GanttKeywords  --> 
+                <keyword attribute="Keyword" context="#stay" String="GanttKeywords" />
+                
                 
                 <!-- Keyword circle_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\(\)" firstNonSpace="false" />
