@@ -188,7 +188,7 @@ class Flight {
 @startuml
 class Dummy {
   { field } A field ( despite parentheses ) 
-  { method} Some method
+  { method } Some method
 }
 
 @enduml

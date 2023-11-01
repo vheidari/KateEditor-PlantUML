@@ -13,7 +13,7 @@ sunday are closed
 
 
 @startgantt
-[Prototype design] lasts 15 days
+[Prototype design] lasts 15 days 
 [Test prototype] lasts 10 days
 @endgantt
 
@@ -94,11 +94,477 @@ Project starts 2020-07-01
 
 
 
+@startgantt
+[Test prototype] lasts 10 days
+[Prototype completed] happens at [Test prototype]'s end
+[Setup assembly line] lasts 12 days
+[Setup assembly line] starts at [Test prototype]'s end
+@endgantt
+
+
+@startgantt
+Project starts 2020-07-01
+[Test prototype] lasts 10 days
+[Prototype completed] happens 2020-07-10
+[Setup assembly line] lasts 12 days
+[Setup assembly line] starts at [Test prototype]'s end
+@endgantt
+
+
+@startgantt
+[Task1] lasts 4 days
+then [Task1.1] lasts 4 days
+[Task1.2] starts at [Task1]'s end and lasts 7 days
+[Task2] lasts 5 days
+then [Task2.1] lasts 4 days
+[MaxTaskEnd] happens at [Task1.1]'s end
+[MaxTaskEnd] happens at [Task1.2]'s end
+[MaxTaskEnd] happens at [Task2.1]'s end
+@endgantt
+
+@startgantt
+[task1] lasts 10 days
+[task1] links to [[http://plantuml.com]]
+@endgantt
+
+
+@startgantt
+Project starts the 20th of september 2017
+[Prototype design] as [TASK1] lasts 13 days
+[TASK1] is colored in Lavender/LightBlue
+@endgantt
+
+
+@startgantt
+Project starts the 2020/09/01
+2020/09/07 is colored in salmon
+2020/09/13 to 2020/09/16 are colored in lightblue
+[Prototype design] as [TASK1] lasts 22 days
+[TASK1] is colored in Lavender/LightBlue
+[Prototype completed] happens at [TASK1]'s end
+@endgantt
+
+
+@startuml
+saturday are closed
+sunday are closed
+Project starts the 1st of january 2021
+[Prototype design end] as [TASK1] lasts 19 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 14 days
+[TASK1]->[Testing]
+2021-01-18 to 2021-01-22 are named [End's committee]
+2021-01-18 to 2021-01-22 are colored in salmon
+@enduml
+
+
+
+@startuml
+printscale weekly
+saturday are closed
+sunday are closed
+Project starts the 1st of january 2021
+[Prototype design end] as [TASK1] lasts 19 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 14 days
+[TASK1]->[Testing]
+2021-01-18 to 2021-01-22 are named [End's committee]
+2021-01-18 to 2021-01-22 are colored in salmon
+@enduml
+
+
+
+@startgantt
+projectscale monthly
+Project starts the 20th of september 2020
+[Prototype design] as [TASK1] lasts 130 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 20 days
+[TASK1]->[Testing]
+2021-01-18 to 2021-01-22 are named [End's committee]
+2021-01-18 to 2021-01-22 are colored in salmon
+@endgantt
+
+
+
+@startgantt
+project starts the 2018/04/09
+saturday are closed
+sunday are closed
+2018/05/01 is closed
+2018/04/17 to 2018/04/19 is closed
+[Prototype design] lasts 14 days
+[Test prototype] lasts 4 days
+[Test prototype] starts at [Prototype design]'s end
+[Prototype design] is colored in Fuchsia/FireBrick
+[Test prototype] is colored in GreenYellow/Green
+@endgantt
+
+
+
+@startgantt
+2020-07-07 to 2020-07-17 is closed
+2020-07-13 is open
+Project starts the 2020-07-01
+[Prototype design] lasts 10 days
+Then [Test prototype] lasts 10 days
+@endgantt
+
+
+
+@startgantt
+[Prototype design] lasts 14 days
+then [Test prototype] lasts 4 days
+then [Deploy prototype] lasts 6 days
+@endgantt
+
+
+@startgantt
+[Prototype design] lasts 14 days
+[Build prototype] lasts 4 days
+[Prepare test] lasts 6 days
+[Prototype design] -> [Build prototype]
+[Prototype design] -> [Prepare test]
+@endgantt
 
 
 
 
+@startgantt
+[Task1] lasts 10 days
+then [Task2] lasts 4 days
+-- Phase Two --
+then [Task3] lasts 5 days
+then [Task4] lasts 6 days
+@endgantt
+
+
+
+@startgantt
+[Task1] on {Alice} lasts 10 days
+[Task2] on {Bob:50%} lasts 2 days
+then [Task3] on {Alice:25%} lasts 1 days
+@endgantt
+
+
+@startgantt
+[Task1] on {Alice} {Bob} lasts 20 days
+@endgantt
+
+
+@startgantt
+project starts on 2020-06-19
+[Task1] on {Alice} lasts 10 days
+{Alice} is off on 2020-06-24 to 2020-06-26
+@endgantt
+
+
+@startgantt
+[Prototype design] lasts 13 days and is colored in Lavender/LightBlue
+[Test prototype] lasts 9 days and is colored in Coral/Green and starts 3 days after [Prototype design]'s end
+[Write tests] lasts 5 days and ends at [Prototype design]'s end
+[Hire tests writers] lasts 6 days and ends at [Write tests]'s start
+[Init and write tests report] is colored in Coral/Green
+[Init and write tests report] starts 1 day before [Test prototype]'s start and ends at [Test prototype]'s end
+@endgantt
+
+
+
+@startgantt
+' This is a comment
+[T1] lasts 3 days
+/' this comment
+is on several lines '/
+[T2] starts at [T1]'s end and lasts 1 day
+@endgantt
+
+
+
+@startuml
+[Task1] lasts 20 days
+note bottom
+  memo1 ... 
+  memo2 ... 
+  explanations1 ... 
+  explanations2 ... 
+end note
+[Task2] lasts 4 days
+[Task1] -> [Task2]
+-- Separator title -- 
+[M1] happens on 5 days after [Task1]'s end
+-- end -- 
+@enduml
+
+
+
+@startuml
+<style>
+ganttDiagram {
+task {
+FontName Helvetica
+FontColor red
+FontSize 18
+PlantUML Language Reference Guide (1.2021.2)
+268 / 415
+16.18
+Using style
+16
+GANTT DIAGRAM
+FontStyle bold
+BackGroundColor GreenYellow
+LineColor blue
+}
+milestone {
+FontColor blue
+FontSize 25
+FontStyle italic
+BackGroundColor yellow
+LineColor red
+}
+note {
+  FontColor DarkGreen
+  FontSize 10
+  LineColor OrangeRed
+}
+arrow {
+FontName Helvetica
+FontColor red
+FontSize 18
+FontStyle bold
+BackGroundColor GreenYellow
+LineColor blue
+}
+separator {
+LineColor red
+BackGroundColor green
+FontSize 16
+FontStyle bold
+FontColor purple
+}
+}
+</style>
+[Task1] lasts 20 days
+note bottom
+  memo1 ...
+  memo2 ...
+  explanations1 ...
+  explanations2 ...
+end note
+[Task2] lasts 4 days
+[Task1] -> [Task2]
+-- Separator title --
+[M1] happens on 5 days after [Task1]'s end
+-- end --
+@enduml
+
+
+@startgantt
+[task01] lasts 15 days
+note bottom
+memo1 ... 
+memo2 ... 
+explanations1 ... 
+explanations2 ... 
+end note
+[task01] -> [task02]
+@endgantt
+
+
+@startgantt
+[task01] lasts 15 days
+note bottom
+memo1 ...
+memo2 ...
+explanations1 ...
+explanations2 ...
+end note
+[task01] -> [task02]
+[task03] lasts 5 days
+@endgantt
+
+
+
+@startgantt
+-- test01 --
+[task01] lasts 4 days
+note bottom
+'note left
+memo1 ...
+memo2 ...
+explanations1 ...
+explanations2 ...
+end note
+[task02] lasts 8 days
+[task01] -> [task02]
+note bottom
+'note left
+memo1 ...
+memo2 ...
+explanations1 ...
+explanations2 ...
+end note
+-- test02 --
+[task03] as [t3] lasts 7 days
+[t3] -> [t4]
+@endgantt
+
+
+
+@startgantt
+Project starts 2020-09-01
+[taskA] starts 2020-09-01 and lasts 3 days
+[taskB] starts 2020-09-10 and lasts 3 days
+[taskB] displays on same row as [taskA]
+[task01] starts 2020-09-05 and lasts 4 days
+then [task02] lasts 8 days
+note bottom
+note for task02
+more notes
+end note
+then [task03] lasts 7 days
+note bottom
+note for task03
+more notes
+end note
+-- separator --
+[taskC] starts 2020-09-02 and lasts 5 days
+[taskD] starts 2020-09-09 and lasts 5 days
+[taskD] displays on same row as [taskC]
+[task 10] starts 2020-09-05 and lasts 5 days
+then [task 11] lasts 5 days
+note bottom
+note for task11
+more notes
+end note
+@endgantt
 
 
 
 
+@startgantt
+Project starts the 5th of december 2018
+saturday are closed
+sunday are closed
+2018/12/29 is opened
+[Prototype design] lasts 17 days
+[Prototype design] pauses on 2018/12/13
+[Prototype design] pauses on 2018/12/14
+[Prototype design] pauses on monday
+[Test prototype] starts at [Prototype design]'s end and lasts 2 weeks
+@endgantt
+
+
+@startgantt
+[T1] lasts 4 days
+[T2] lasts 4 days and starts 3 days after [T1]'s end with blue dotted link
+[T3] lasts 4 days and starts 3 days after [T2]'s end with green bold link
+[T4] lasts 4 days and starts 3 days after [T3]'s end with green dashed link
+@endgantt
+
+
+@startuml
+<style>
+ganttDiagram {
+arrow {
+LineColor blue
+  }
+}
+</style>
+[Prototype design] lasts 7 days
+[Build prototype] lasts 4 days
+[Prepare test] lasts 6 days
+[Prototype design] -[#FF00FF]-> [Build prototype]
+[Prototype design] -[dotted]-> [Prepare test]
+Then [Run test]  lasts 4 days
+@enduml
+
+
+
+@startgantt
+[Prototype design] lasts 13 days
+[Test prototype] lasts 4 days and 1 week
+[Test prototype] starts 1 week and 2 days after [Prototype design]'s end
+[Test prototype] displays on same row as [Prototype design]
+[r1] happens on 5 days after [Prototype design]'s end
+[r2] happens on 5 days after [r1]'s end
+[r3] happens on 5 days after [r2]'s end
+[r2] displays on same row as [r1]
+[r3] displays on same row as [r1]
+@endgantt
+
+
+@startgantt
+Project starts the 20th of september 2018
+sunday are close
+2018/09/21 to 2018/09/23 are colored in salmon
+2018/09/21 to 2018/09/30 are named [Vacation in the Bahamas]
+today is 30 days after start and is colored in #AAF
+[Foo] happens 40 days after start
+[Dummy] lasts 10 days and starts 10 days after start
+@endgantt
+
+
+
+@startgantt
+project starts on 2020-07-01
+[P_start] happens 2020-07-03
+[P_end] happens 2020-07-13
+[Prototype design] occurs from [P_start] to [P_end]
+@endgantt
+
+
+@startuml
+header some header
+footer some footer
+title My title
+[Prototype design] lasts 13 days
+legend
+  The legend
+end legend
+caption This is caption
+@enduml
+
+
+@startgantt
+hide footbox
+title Foot Box removed
+[Prototype design] lasts 15 days
+[Test prototype] lasts 10 days
+@endgantt
+
+@startgantt
+Project starts the 20th of september 2017
+[Prototype design] as [TASK1] lasts 13 days
+[TASK1] is colored in Lavender/LightBlue
+hide footbox
+@endgantt
+
+
+
+@startgantt
+hide footbox
+printscale weekly
+saturday are closed
+sunday are closed
+Project starts the 1st of january 2021
+[Prototype design end] as [TASK1] lasts 19 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 14 days
+[TASK1]->[Testing]
+2021-01-18 to 2021-01-22 are named [End's committee]
+2021-01-18 to 2021-01-22 are colored in salmon
+@endgantt
+
+
+
+@startgantt
+hide footbox
+projectscale monthly
+Project starts the 20th of september 2020
+[Prototype design] as [TASK1] lasts 130 days
+[TASK1] is colored in Lavender/LightBlue
+[Testing] lasts 20 days
+[TASK1]->[Testing]
+2021-01-18 to 2021-01-22 are named [End's committee]
+2021-01-18 to 2021-01-22 are colored in salmon
+@endgantt
