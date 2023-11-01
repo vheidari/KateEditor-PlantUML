@@ -391,6 +391,7 @@
         </contexts>
         <!--  End Contexts -->
 
+         <!-- Start itemDatas  -->
         <itemDatas>
             <itemData name="NormalText" defStyleNum="dsNormal" />
             <itemData name="OpenCloseKeyword" defStyleNum="dsBuiltIn" />
@@ -406,15 +407,19 @@
             <itemData name="Note" defStyleNum="dsInformation" />
             <itemData name="GanttBraket" defStyleNum="dsInformation" />
         </itemDatas>
+        <!-- End itemDatas  -->
+        
     </highlighting>
 
     <!-- Start General -->
     <general>
-        <!-- Comments  -->
+        <!-- Start Comments  -->
         <comments>
             <comment name="singleLine" start="'" />
             <comment name="multiLine" start="/'" end="'/" region="CommentFolding" />
         </comments>
+        <!-- End Comments  -->
+        
         <keywords casesensitive="1" />
         <folding indentationsensitive="0" />
         <emptyLines>
