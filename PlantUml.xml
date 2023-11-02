@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language name="PlantUml" version="1" kateversion="2.4" section="Sources" extensions="*.pu;*.uml;*.puml;*.iuml;*.plantuml" author="Vahid Heidari (vahid-heidari@hotmail.com)" license="MIT">
     <highlighting>
+
         <!-- OpenCloseToken Keywords -->
         <list name="OpenCloseKeywords">
             <item>@startuml</item>
@@ -71,7 +72,7 @@
             <item>void</item>
         </list>
         
-        <!-- Define List of GanttKeywords         -->
+        <!-- Define List of GanttKeywords -->
         <list name="GanttKeywords">
             <item>starts</item>
             <item>ends</item>
@@ -113,7 +114,7 @@
             <item>then</item>
         </list>
         
-        <!-- Define List of GanttTypes         -->
+        <!-- Define List of GanttTypes  -->
         <list name="GanttTypes">
             <item>monday</item>
             <item>tuesday</item>
@@ -311,6 +312,9 @@
         <contexts>
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
+                                <!-- Start Handeling Note -->
+                <RegExpr attribute="Note" context="assign" String="(note\stop\sof)|(note\sright\sof)|(note\sbottom\sof)|(note\sleft\sof)|(note\s(top|right|bottom|left))|(^note)|(^end\snote)|(^end)" firstNonSpace="false" />
+                
                 <DetectSpaces />
                  <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
                 <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
@@ -372,8 +376,7 @@
                 <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
-                <!-- Start Handeling Note -->
-                <RegExpr attribute="Note" context="assign" String="(note\stop\sof)|(note\sright\sof)|(note\sbottom\sof)|(note\sleft\sof)|(note\sleft)|(^note)|(end\snote)" firstNonSpace="false" />
+
 
             </context>
             
