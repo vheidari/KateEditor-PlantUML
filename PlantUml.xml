@@ -291,8 +291,6 @@
             <item>YellowGreen</item>
         </list>
         
-        
-        
         <!-- Define list of Noations -->
         <list name="Noations">
             <item>override</item>
@@ -305,14 +303,12 @@
             <item>switch</item>
         </list>
         
-        
-        
-
         <!-- Start Contexts    -->
         <contexts>
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
-                                <!-- Start Handeling Note -->
+                
+                <!-- Start Handeling Note -->
                 <RegExpr attribute="Note" context="assign" String="(note\stop\sof)|(note\sright\sof)|(note\sbottom\sof)|(note\sleft\sof)|(note\s(top|right|bottom|left))|(^note)|(^end\snote)|(^end)" firstNonSpace="false" />
                 
                 <DetectSpaces />
@@ -339,10 +335,8 @@
                 <!--  Start Handeling GanttKeywords  --> 
                 <keyword attribute="Keyword" context="#stay" String="GanttKeywords" />
                 
-                
                 <!--  Start Handeling GanttColors  --> 
                 <keyword attribute="Function" context="#stay" String="GanttColors" />
-                
                 
                 <!-- Keyword circle_short_form syntax -->
                 <RegExpr attribute="GanttBraket" context="assign" String="((\[)(.*?)(\]))" firstNonSpace="false" />
@@ -372,12 +366,9 @@
                 <!-- Start Handeling Single Line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="^\'.*" firstNonSpace="false" />
                
-
                 <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
-
-
             </context>
             
             <!--  End Handeling Multiple line string  -->
