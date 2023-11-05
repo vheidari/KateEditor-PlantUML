@@ -352,16 +352,13 @@
                 <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
                 <!-- Start Handeling Lables -->
-                <RegExpr attribute="Lable" context="assign" String=": (.)\w+.*" firstNonSpace="false" />
-                <RegExpr attribute="Lable" context="assign" String=": (.)\w+ [:digit:]\w+ &gt;" firstNonSpace="false" />
-                <RegExpr attribute="Lable" context="assign" String=": (.)\w+ &gt;" firstNonSpace="false" />
-                <RegExpr attribute="Lable" context="assign" String=": &lt; (.)\w+" firstNonSpace="false" />
+                <RegExpr attribute="Lable" context="assign" String=":\s(?!.*(?:\(\)|\[\])).*$" firstNonSpace="false" />
                 
                 <!-- Start Handeling Oprators  -->
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
 
                 <!-- Start Handeling Functions -->
-                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)" firstNonSpace="false" />
+                <RegExpr attribute="Function" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)|\w+[a-z-A-Z1-9]\[.*\]" firstNonSpace="false" />
                 
                 <!-- Start Handeling Single Line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="^\'.*" firstNonSpace="false" />
