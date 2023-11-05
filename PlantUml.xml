@@ -309,7 +309,7 @@
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
                 
                 <!-- Start Handeling Note -->
-                <RegExpr attribute="Note" context="assign" String="(^note\stop\sof)|(^note\sright\sof)|(^note\sbottom\sof)|(^note\sleft\sof)|(^note\s(top|right|bottom|left))|(^note)|(^end\snote)|(^end)" firstNonSpace="false" />
+                <RegExpr attribute="Note" context="assign" String="(^note\s(top|right|bottom|left)\sof)|(^note\sleft\sof)|(^note\s(top|right|bottom|left))|(^note)|(^end\snote)|(^end)" firstNonSpace="false" />
                 
                 <DetectSpaces />
                  <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
