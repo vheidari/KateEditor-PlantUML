@@ -457,7 +457,7 @@
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
 
                 <!-- Start Handeling Functions -->
-                <RegExpr attribute="FunctionAndObject" context="assign" String="\w+[a-z-A-Z1-9]\(.*\)|\w+[a-z-A-Z1-9]\[.*\]" firstNonSpace="false" />
+                <RegExpr attribute="FunctionAndObject" context="assign" String="\w+[a-z-A-Z1-9]\s\(.*\)|\w+[a-z-A-Z1-9]\[.*\]" firstNonSpace="false" />
                 
                 <!-- Start Handeling Single Line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="^\'.*" firstNonSpace="false" />

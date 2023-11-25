@@ -1,5 +1,5 @@
 # KateEditor-PlantUML
-PlantUML, syntax highlighter for KateEditor
+KateEditor-PlantUML,  is a syntax highlighter for KateEditor
 
 ## Install :
 To install you should copy `PlantUML.xml` to `Kate` syntax folder. depend on your operation system flow right path for your self.
