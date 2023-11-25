@@ -451,7 +451,7 @@
                 <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
                 <!-- Start Handeling Lables -->
-                <RegExpr attribute="Lable" context="assign" String=":\s(?!.*(?:\(\)|\[\])).*$" firstNonSpace="false" />
+                <RegExpr attribute="Lable" context="assign" String=":\s(?!.*(?:\(\)|\[\]|\(.*\)|\(.*\){|\(.*\)\s{|\(.*,.*\)|\(.*, .*\))).*$" firstNonSpace="false" />
                 
                 <!-- Start Handeling Oprators  -->
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
