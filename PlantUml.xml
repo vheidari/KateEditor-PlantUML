@@ -124,6 +124,12 @@
             <item>while</item>
         </list>
         
+        <!-- Define keywords Group Three -->
+        <list name="KeywordsGroupThree">
+            <item>concise</item>
+            <item>robust</item>
+        </list>
+        
         <!-- Define List of participants keyword  -->
         <list name="Participants">
             <item>participant</item>
@@ -421,6 +427,7 @@
                 <!--  Start Handeling Keywords  --> 
                 <keyword attribute="Keyword" context="#stay" String="KeywordsGroupOne" />
                 <keyword attribute="Keyword" context="assign" String="KeywordsGroupTwo" />
+                <keyword attribute="Keyword" context="assign" String="KeywordsGroupThree" />
                 <keyword attribute="Keyword" context="assign" String="Participants" />
                 <keyword attribute="Keyword" context="assign" String="Modifires" />
                 
