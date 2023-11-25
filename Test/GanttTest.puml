@@ -426,7 +426,7 @@ note bottom
 note for task03
 more notes
 end note
--- separator --
+-- separator -- 
 [taskC] starts 2020-09-02 and lasts 5 days
 [taskD] starts 2020-09-09 and lasts 5 days
 [taskD] displays on same row as [taskC]

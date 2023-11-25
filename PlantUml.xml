@@ -12,8 +12,8 @@
             <item>@endgantt</item>
         </list>
 
-        <!-- Define List of keywords  -->
-        <list name="Keywords">
+        <!-- Define Keywords Group One -->
+        <list name="KeywordsGroupOne">
             <item>abstract</item>
             <item>interface</item>
             <item>class</item>
@@ -32,6 +32,96 @@
             <item>skinparam</item>
             <item>skinparam</item>
             <item>classAttributeIconSize</item>
+        </list>
+        
+        <!-- Define Keywords Group Two  -->
+        <list name="KeywordsGroupTwo">
+            <item>across</item>
+            <item>activate</item>
+            <item>again</item>
+            <item>allow_mixing</item>
+            <item>allowmixing</item>
+            <item>also</item>
+            <item>alt</item>
+            <item>as</item>
+            <item>autonumber</item>
+            <item>bold</item>
+            <item>bottom</item>
+            <item>box</item>
+            <item>break</item>
+            <item>caption</item>
+            <item>center</item>
+            <item>circle</item>
+            <item>color</item>
+            <item>create</item>
+            <item>critical</item>
+            <item>dashed</item>
+            <item>deactivate</item>
+            <item>description</item>
+            <item>destroy</item>
+            <item>detach</item>
+            <item>dotted</item>
+            <item>down</item>
+            <item>else</item>
+            <item>elseif</item>
+            <item>empty</item>
+            <item>end</item>
+            <item>endif</item>
+            <item>endwhile</item>
+            <item>false</item>
+            <item>footbox</item>
+            <item>footer</item>
+            <item>fork</item>
+            <item>group</item>
+            <item>header</item>
+            <item>hide</item>
+            <item>hnote</item>
+            <item>if</item>
+            <item>is</item>
+            <item>italic</item>
+            <item>kill</item>
+            <item>left</item>
+            <item>legend</item>
+            <item>link</item>
+            <item>loop</item>
+            <item>mainframe</item>
+            <item>map</item>
+            <item>members</item>
+            <item>namespace</item>
+            <item>newpage</item>
+            <item>normal</item>
+            <item>note</item>
+            <item>of</item>
+            <item>on</item>
+            <item>opt</item>
+            <item>order</item>
+            <item>over</item>
+            <item>package</item>
+            <item>page</item>
+            <item>par</item>
+            <item>partition</item>
+            <item>plain</item>
+            <item>ref</item>
+            <item>repeat</item>
+            <item>return</item>
+            <item>right</item>
+            <item>rnote</item>
+            <item>rotate</item>
+            <item>show</item>
+            <item>skin</item>
+            <item>skinparam</item>
+            <item>split</item>
+            <item>sprite</item>
+            <item>start</item>
+            <item>stereotype</item>
+            <item>stop</item>
+            <item>style</item>
+            <item>then</item>
+            <item>title</item>
+            <item>top</item>
+            <item>true</item>
+            <item>up</item>
+            <item>while</item>
         </list>
         
         <!-- Define List of participants keyword  -->
@@ -78,6 +168,7 @@
             <item>ends</item>
             <item>start</item>
             <item>end</item>
+            <item>opened</item>
             <item>closed</item>
             <item>after</item>
             <item>colored</item>
@@ -327,8 +418,9 @@
                 <!-- Start Handeling Noations -->
                 <keyword attribute="Type" context="assign" String="Noations" />
                 
-                <!--  Start Handeling Keyword  --> 
-                <keyword attribute="Keyword" context="#stay" String="Keywords" />
+                <!--  Start Handeling Keywords  --> 
+                <keyword attribute="Keyword" context="#stay" String="KeywordsGroupOne" />
+                <keyword attribute="Keyword" context="assign" String="KeywordsGroupTwo" />
                 <keyword attribute="Keyword" context="assign" String="Participants" />
                 <keyword attribute="Keyword" context="assign" String="Modifires" />
                 
