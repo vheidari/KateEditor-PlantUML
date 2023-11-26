@@ -12,7 +12,7 @@
             <item>@endgantt</item>
         </list>
 
-        <!-- Define Keywords Group One -->
+        <!-- KeywordsGroupOne Keywords -->
         <list name="KeywordsGroupOne">
             <item>abstract</item>
             <item>interface</item>
@@ -34,7 +34,7 @@
             <item>classAttributeIconSize</item>
         </list>
         
-        <!-- Define Keywords Group Two  -->
+        <!-- KeywordsGroupTwo Keywords -->
         <list name="KeywordsGroupTwo">
             <item>across</item>
             <item>activate</item>
@@ -124,13 +124,13 @@
             <item>while</item>
         </list>
         
-        <!-- Define keywords Group Three -->
+        <!-- KeywordsGroupThree keywords  -->
         <list name="KeywordsGroupThree">
             <item>concise</item>
             <item>robust</item>
         </list>
         
-        <!-- Define List of participants keyword  -->
+        <!-- Participants keywords  -->
         <list name="Participants">
             <item>participant</item>
             <item>actor</item>
@@ -145,7 +145,7 @@
             <item>hide</item>
         </list>
         
-        <!-- Define List of Modifires  -->
+        <!-- Modifires Keywords  -->
         <list name="Modifires">
             <item>public</item>
             <item>private</item>
@@ -154,7 +154,7 @@
             <item>virtual</item>
         </list>
         
-        <!-- Define List of Types  -->
+        <!-- Types Keywords  -->
         <list name="Types">
             <item>Int</item>
             <item>Float</item>
@@ -168,7 +168,7 @@
             <item>void</item>
         </list>
         
-        <!-- Define List of GanttKeywords -->
+        <!-- GanttKeywords Keywords -->
         <list name="GanttKeywords">
             <item>starts</item>
             <item>ends</item>
@@ -211,7 +211,7 @@
             <item>then</item>
         </list>
         
-        <!-- Define List of GanttTypes  -->
+        <!-- GanttTypes keywords  -->
         <list name="GanttTypes">
             <item>monday</item>
             <item>tuesday</item>
@@ -230,7 +230,7 @@
             <item>column</item>
         </list>
         
-        <!-- Define list of Noations -->
+        <!-- GanttColors keywords -->
         <list name="GanttColors">
             <item>APPLICATION</item>
             <item>AliceBlue</item>
@@ -388,12 +388,12 @@
             <item>YellowGreen</item>
         </list>
         
-        <!-- Define list of Noations -->
+        <!-- Noations keywords -->
         <list name="Noations">
             <item>override</item>
         </list>
         
-        <!-- Define List of Conditions  -->
+        <!-- Conditions keywords  -->
         <list name="Conditions">
             <item>if</item>
             <item>else</item>
@@ -405,74 +405,73 @@
             <!--  Normal Text context -->
             <context attribute="NormalText" lineEndContext="#pop" name="NormalText">
                 
-                <!-- Start Handeling Note -->
+                <!-- Start handling Note -->
                 <RegExpr attribute="Note" context="assign" String="(^note\s(top|right|bottom|left)\sof)|(^note\sleft\sof)|(^note\s(top|right|bottom|left))|(^note)|(^end\snote)|(^end)" firstNonSpace="false" />
                 
                 <DetectSpaces />
-                 <!-- Start Handeling Multiple line Comment [(related by) -> context name="Comment"]  -->
+                 <!-- Start handling multiple-line Comment [(related by) -> context name="Comment"]  -->
                 <StringDetect attribute="Comment" context="Comment" String="/'" beginRegion="comment"/>
                 
-                <!--  Start Handeling OpenCloseKeywords -->
+                <!--  Start handling OpenCloseKeywords -->
                 <keyword attribute="OpenCloseKeyword" context="#stay" String="OpenCloseKeywords" />
                 
-                <!-- Start Handeling Types -->
+                <!-- Start handling Types -->
                 <keyword attribute="Type" context="#stay" String="Types" />
                 
-                <!-- Start Handeling GanttTypes -->
+                <!-- Start handling GanttTypes -->
                 <keyword attribute="Type" context="#stay" String="GanttTypes" />
                 
-                <!-- Start Handeling Noations -->
+                <!-- Start handling Noations -->
                 <keyword attribute="Type" context="assign" String="Noations" />
                 
-                <!--  Start Handeling Keywords  --> 
+                <!--  Start handling Keywords  --> 
                 <keyword attribute="Keyword" context="#stay" String="KeywordsGroupOne" />
                 <keyword attribute="Keyword" context="assign" String="KeywordsGroupTwo" />
                 <keyword attribute="Keyword" context="assign" String="KeywordsGroupThree" />
                 <keyword attribute="Keyword" context="assign" String="Participants" />
                 <keyword attribute="Keyword" context="assign" String="Modifires" />
                 
-                <!--  Start Handeling GanttKeywords  --> 
+                <!--  Start handling GanttKeywords  --> 
                 <keyword attribute="Keyword" context="#stay" String="GanttKeywords" />
                 
-                <!--  Start Handeling GanttColors  --> 
+                <!--  Start handling GanttColors  --> 
                 <keyword attribute="Function" context="#stay" String="GanttColors" />
                 
-                <!-- Keyword circle_short_form syntax -->
+                <!-- Start handling circle_short_form syntax -->
                 <RegExpr attribute="GanttBraket" context="assign" String="((\[)(.*?)(\]))" firstNonSpace="false" />
                 
-                
-                <!-- Keyword circle_short_form syntax -->
+                <!-- Start handling circle_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\(\)" firstNonSpace="false" />
                 
-                <!-- Keyword diamond_short_form syntax -->
+                <!-- Start handling diamond_short_form syntax -->
                 <RegExpr attribute="Keyword" context="assign" String="\&lt;&gt;" firstNonSpace="false" />
 
-                <!-- Start Handeling Symbols -->
+                <!-- Start handling Symbols -->
                 <RegExpr attribute="Symbol" context="assign" String="(?&lt;!\w)[ \.\#\-\_\&lt;\=>\[\]\(\)\{\}\?\*\+\^\\\/\\o\\x\|]+(?=\W)|(>>)|(&lt;&lt;)|(>>)|&lt;(&quot;[^=]*&quot;|&quot;[^&quot;]*&quot;|[^&quot;&quot;>])*>" firstNonSpace="false" />
                 
-                <!-- Start Handeling Lables -->
+                <!-- Start handling Lables -->
                 <RegExpr attribute="Lable" context="assign" String=":\s(?!.*(?:\(\)|\[\]|\(.*\)|\(.*\){|\(.*\)\s{|\(.*,.*\)|\(.*, .*\))).*$" firstNonSpace="false" />
                 
-                <!-- Start Handeling Oprators  -->
+                <!-- Start handling Oprators  -->
                 <AnyChar attribute="Operator" context="#stay" String="#,+,-,:,=,~" />
 
-                <!-- Start Handeling Functions -->
+                <!-- Start handling Functions -->
                 <RegExpr attribute="FunctionAndObject" context="assign" String="\w+[a-z-A-Z1-9]\s\(.*\)|\w+[a-z-A-Z1-9]\[.*\]" firstNonSpace="false" />
                 
-                <!-- Start Handeling Single Line Comment -->
+                <!-- Start handling single-line Comment -->
                 <RegExpr attribute="Comment" context="assign" String="^\'.*" firstNonSpace="false" />
                
-                <!-- Start Handeling Multiple line String [(related by) -> context name="String"]   -->               
+                <!-- Start handling multiple-line String [(related by) -> context name="String"]   -->               
                 <DetectChar attribute="String" context="string" char="&quot;" />
                 
             </context>
             
-            <!--  End Handeling Multiple line string  -->
+            <!--  End handling multiple-line string  -->
             <context attribute="String" lineEndContext="#stay" name="string">
                 <DetectChar attribute="String" context="#pop" char="&quot;" />
             </context>
             
-            <!-- End Handeling Multiple line comment handeling  -->
+            <!-- End handling multiple-line comment -->
             <context name="Comment" attribute="Comment" lineEndContext="#stay">
                 <DetectSpaces/>
                 <StringDetect attribute="Comment" context="#pop" String="'/" endRegion="comment"/>
