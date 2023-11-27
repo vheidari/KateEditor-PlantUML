@@ -1,11 +1,12 @@
 # KateEditor-PlantUML
-KateEditor-PlantUML,  is a syntax highlighter for KateEditor
+`KateEditor-PlantUML`,  is a `syntax` highlighter for the `Kate Editor`, designed specifically for `PlantUML`.
 
 ## Install :
-To install you should copy `PlantUML.xml` to `Kate` syntax folder. depend on your operation system flow right path for your self.
+To install it, you should copy `PlantUML.xml` to the `Kate` syntax folder, depending on your operating system, following the correct path for yourself.lf.
 
 ## Unix/Linux
 Please add the `PlantUML.xml` file to the path provided below:
+
 
 ```Bash
 # For all users  
@@ -15,14 +16,14 @@ Please add the `PlantUML.xml` file to the path provided below:
 $HOME/.local/share/kate/syntax
 
 ```
->Note : If directory `syntax` isn't exist, you msut create once in this path `/usr/share/katepart5/` or `$HOME/.local/share/kate/`.
+>Note : If the directory `syntax` does not exist, you must create it once in either the path `/usr/share/katepart5/` or `$HOME/.local/share/kate/`.
 
 ## Windows 
-Please add `PlantUML.xml` file to the path below :
+Please add the `PlantUML.xml` file to the path below.
 
 ```Bash
 %USERPROFILE%/AppData/Local/org.kde.syntax-highlighting/syntax
 ```
->Note : if directory `syntax` isn't exist, you must create one in this path : `%USERPROFILE%/AppData/Local/org.kde.syntax-highlighting/`
+>Note : If the directory `syntax` does not exist, you must create one in this path: `%USERPROFILE%/AppData/Local/org.kde.syntax-highlighting/`.
 
 >Note : `%USERPROFILE%/` in Windows is a short path for `C://User/[yourusername]`
