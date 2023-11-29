@@ -2,7 +2,7 @@
 `KateEditor-PlantUML`,  is a `syntax` highlighter for the `Kate Editor`, designed specifically for `PlantUML`.
 
 ## Install :
-To install it, you should copy `PlantUML.xml` to the `Kate` syntax folder, depending on your operating system, following the correct path for yourself.lf.
+To install it, you should copy `PlantUML.xml` to the `Kate` syntax folder, depending on your operating system, following the correct path for yourself.
 
 ## Unix/Linux
 Please add the `PlantUML.xml` file to the path provided below:
