@@ -515,10 +515,6 @@
             <emptyLine regexpr="\s+" />
             <emptyLine regexpr="\s*#.*" />
         </emptyLines>
-        <spellchecking>
-            <encoding char="á" string="\'a" />
-            <encoding char="à" string="\`a" />
-        </spellchecking>
     </general>
     <!-- End General-->
 </language>
