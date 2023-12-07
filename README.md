@@ -13,10 +13,16 @@ Please add the `PlantUML.xml` file to the path provided below:
 /usr/share/katepart5/syntax
 
 # For current user
-$HOME/.local/share/kate/syntax
+$HOME/.local/share/katepart5/syntax
+
+or
+
+$HOME/.local/share/org.kde.syntax-highlighting/syntax
 
 ```
->Note : If the directory `syntax` does not exist, you must create it once in either the path `/usr/share/katepart5/` or `$HOME/.local/share/kate/`.
+>Note: If either the directory `katepart5` or `org.kde.syntax-highlighting` does not exist in the `$HOME/.local/share/` path, you must create one.
+
+>Note: Additionally, if the directory syntax does not exist in either the `/usr/share/katepart5/` or `$HOME/.local/share/katepart5/` path, you must create one.
 
 ## Windows 
 Please add the `PlantUML.xml` file to the path below.
